@@ -7,6 +7,7 @@ const Students = [
     email: "moiza8994@gmail.com",
     number: 111111111,
     age: 20,
+    isPresent: "Access"
   },
   {
     id: 2,
@@ -33,7 +34,9 @@ const Students = [
 
 const resolvers = {
   Query: {
-    students: () => Students,
+    students: () => {
+      return Students
+    },
   },
 };
 
@@ -46,6 +49,7 @@ const typeDefs = gql`
     email: String
     number: Int
     age: Int
+    isPresent: String
   }
 
   type Query {
