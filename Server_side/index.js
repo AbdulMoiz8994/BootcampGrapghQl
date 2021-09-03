@@ -46,6 +46,7 @@ const resolvers={
 
 // make the schema
 const typeDefs=gql`
+
     type contact{
       fullName: String
       fatherName: String
@@ -53,6 +54,7 @@ const typeDefs=gql`
       phoneNumber: Int
       email: String
     }
+
   type Query{
     contacts: [contact]
   }`
