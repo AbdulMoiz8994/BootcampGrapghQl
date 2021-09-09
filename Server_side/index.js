@@ -1,42 +1,46 @@
-const {ApolloServer} =require('apollo-server')
-const typeDefs = require('./Schema');
+const { ApolloServer } = require("apollo-server");
+const typeDefs = require("./Schema");
 
-
-
-const loginFrom=[
-
+const Login = [
   {
-    name: "Abdul Moiz",
+    firstName: "Abdul",
+    lastName: "Moiz",
     email: "moiza8994@gmail.com",
-    password: "khanzada123",
-    phoneNumber: 111-111-111
+    password: "khanzada1234",
+    phoneNumber: 222222222,
   },
   {
-    name: "Abdul Moiz",
+    firstName: "Abdul",
+    lastName: "Moiz",
     email: "moiza8994@gmail.com",
-    password: "khanzada123",
-    phoneNumber: 111-111-111
+    password: "khanzada1234",
+    phoneNumber: 222222222,
   },
   {
-    name: "Abdul Moiz",
+    firstName: "Abdul",
+    lastName: "Moiz",
     email: "moiza8994@gmail.com",
-    password: "khanzada123",
-    phoneNumber: 111-111-111
-  }
+    password: "khanzada1234",
+    phoneNumber: 222222222,
+  },
+  {
+    firstName: "Abdul",
+    lastName: "Moiz",
+    email: "moiza8994@gmail.com",
+    password: "khanzada1234",
+    phoneNumber: 222222222,
+  },
 ];
 
-
-const resolvers={
+const resolvers = {
   Query: {
-    Login: () =>   {
-       return loginFrom
-    }
-  }
-}
-const server= new ApolloServer({typeDefs, resolvers})
+    login: () => {
+      return Login;
+    },
+  },
+};
 
-server.listen().then(({url}) =>{
-   console.log(`🚀  Server ready at ${url}`);
-})
-
-
+const server = new ApolloServer({ typeDefs, resolvers });
+server.listen().then(({ url }) => {
+  console.log(`🚀  Server ready at ${url}`);
+});
