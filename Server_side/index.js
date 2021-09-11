@@ -3,6 +3,7 @@ const { ApolloServer } = require("apollo-server");
 
 const realData = [
   {
+    id: 1,
     fullName: "Abdul Moiz",
     fatherName: "Zafar Ali",
     email: "moiza8994@gmail.com",
@@ -10,6 +11,7 @@ const realData = [
     isMarried: true,
   },
   {
+    id: 2,
     fullName: "Abdul Moiz",
     fatherName: "Zafar Ali",
     email: "moiza8994@gmail.com",
@@ -17,6 +19,7 @@ const realData = [
     isMarried: true,
   },
   {
+    id: 5,
     fullName: "Abdul Moiz",
     fatherName: "Zafar Ali",
     email: "moiza8994@gmail.com",
@@ -24,6 +27,7 @@ const realData = [
     isMarried: true,
   },
   {
+    id: 4,
     fullName: "Abdul Moiz",
     fatherName: "Zafar Ali",
     email: "moiza8994@gmail.com",
@@ -36,6 +40,26 @@ const resolvers = {
   Query: {
     contactDetails: () => {
       return realData;
+    },
+  },
+  Mutation: {
+    addStudent: (e, { input }) => {
+      realData.push({
+        id: input.id,
+        fullName: input.fullName,
+        fatherName: input.fatherName,
+        email: input.email,
+        phoneNumber: input.phoneNumber,
+        isMarried: input.isMarried,
+      })
+      return {
+        id: input.id,
+        fullName: input.fullName,
+        fatherName: input.fatherName,
+        email: input.email,
+        phoneNumber: input.phoneNumber,
+        isMarried: input.isMarried,
+      };
     },
   },
 };
