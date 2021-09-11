@@ -1,46 +1,47 @@
-const { ApolloServer } = require("apollo-server");
 const typeDefs = require("./Schema");
+const { ApolloServer } = require("apollo-server");
 
-const Login = [
+const realData = [
   {
-    firstName: "Abdul",
-    lastName: "Moiz",
+    fullName: "Abdul Moiz",
+    fatherName: "Zafar Ali",
     email: "moiza8994@gmail.com",
-    password: "khanzada1234",
-    phoneNumber: 222222222,
+    phoneNumber: 1111111111,
+    isMarried: true,
   },
   {
-    firstName: "Abdul",
-    lastName: "Moiz",
+    fullName: "Abdul Moiz",
+    fatherName: "Zafar Ali",
     email: "moiza8994@gmail.com",
-    password: "khanzada1234",
-    phoneNumber: 222222222,
+    phoneNumber: 1111111111,
+    isMarried: true,
   },
   {
-    firstName: "Abdul",
-    lastName: "Moiz",
+    fullName: "Abdul Moiz",
+    fatherName: "Zafar Ali",
     email: "moiza8994@gmail.com",
-    password: "khanzada1234",
-    phoneNumber: 222222222,
+    phoneNumber: 1111111111,
+    isMarried: true,
   },
   {
-    firstName: "Abdul",
-    lastName: "Moiz",
+    fullName: "Abdul Moiz",
+    fatherName: "Zafar Ali",
     email: "moiza8994@gmail.com",
-    password: "khanzada1234",
-    phoneNumber: 222222222,
+    phoneNumber: 1111111111,
+    isMarried: true,
   },
 ];
 
 const resolvers = {
   Query: {
-    login: () => {
-      return Login;
+    contactDetails: () => {
+      return realData;
     },
   },
 };
 
 const server = new ApolloServer({ typeDefs, resolvers });
+
 server.listen().then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`);
+  console.log(`The server is runing port Number ${url}`);
 });
