@@ -43,7 +43,8 @@ const resolvers = {
     },
   },
   Mutation: {
-    addStudent: (e, { input }) => {
+    addStudent: (e,  {input} ) => {
+      console.log(input);
       realData.push({
         id: input.id,
         fullName: input.fullName,
