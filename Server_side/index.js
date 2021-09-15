@@ -1,7 +1,7 @@
 const { ApolloServer } = require("apollo-server");
 const typeDefs = require("./Schema");
 
-const Books = [
+let Books = [
   {
     id: 1,
     autherName: "Hasham",
@@ -36,15 +36,35 @@ const Books = [
   },
 ];
 
-const resolvers={
-  Query:{
-    books: () => Books
-  }
+const resolvers = {
+  Query: {
+    books: () => Books,
+  },
+  Mutation: {
+    addInputFields: (e, {input}) => {
+      console.log(input);
+      Books.push({
+        id: input.id,
+        autherName: input.autherName,
+        bookName: input.bookName,
+        pages: input.pages,
+        email: input.email,
+        isAlive: input.isAlive,        
+      })
+      return {
+        id: input.id,
+        autherName: input.autherName,
+        bookName: input.bookName,
+        pages: input.pages,
+        email: input.email,
+        isAlive: input.isAlive,
+      };
+    },
+  },
 };
 
+const server = new ApolloServer({ typeDefs, resolvers });
 
-const server= new ApolloServer({typeDefs,resolvers})
-
-server.listen().then(({url}) =>{
+server.listen().then(({ url }) => {
   console.log(` The Port is runing on port Nimber ${url}`);
 });
