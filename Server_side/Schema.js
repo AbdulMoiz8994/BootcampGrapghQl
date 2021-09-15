@@ -1,36 +1,17 @@
-const {gql} =require('apollo-server')  //we are using for getting graph Query Language for make the schema from apollo server lib
+const {gql}=require('apollo-server');
+
 
 const typeDefs=gql`
-   type contactType{
-     id: Int
-     fullName: String
-     fatherName: String
-     email: String
-     phoneNumber: Int
-     isMarried: Boolean
-   }
-
-    input studentinput{
-      id: Int
-      fullName: String
-      fatherName: String
-      email: String
-      phoneNumber: Int
-      isMarried: Boolean
-    }
-
-
-  type Query{
-    contactDetails: [contactType]
-  }
-  
-  
-  type Mutation{
-    addStudent(input: studentinput): contactType
-  }`
-
-
-
-
-// export this schema type of an api
+     type Book{
+       id:Int
+       autherName: String
+       bookName: String
+       Pages: Int
+       email: String
+       isAlive: Boolean 
+     }
+     
+    type Query{
+      books : [Book]  
+    }`
 module.exports=typeDefs;

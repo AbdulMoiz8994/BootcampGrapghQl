@@ -1,72 +1,50 @@
-const typeDefs = require("./Schema");
 const { ApolloServer } = require("apollo-server");
+const typeDefs = require("./Schema");
 
-const realData = [
+const Books = [
   {
     id: 1,
-    fullName: "Abdul Moiz",
-    fatherName: "Zafar Ali",
-    email: "moiza8994@gmail.com",
-    phoneNumber: 1111111111,
-    isMarried: true,
+    autherName: "Hasham",
+    bookName: "Old History",
+    pages: 200,
+    email: "hashama8994@gmail.com",
+    isAlive: true,
   },
   {
     id: 2,
-    fullName: "Abdul Moiz",
-    fatherName: "Zafar Ali",
-    email: "moiza8994@gmail.com",
-    phoneNumber: 1111111111,
-    isMarried: true,
+    autherName: "Hasham",
+    bookName: "Old History",
+    pages: 200,
+    email: "hashama8994@gmail.com",
+    isAlive: true,
   },
   {
-    id: 5,
-    fullName: "Abdul Moiz",
-    fatherName: "Zafar Ali",
-    email: "moiza8994@gmail.com",
-    phoneNumber: 1111111111,
-    isMarried: true,
+    id: 3,
+    autherName: "Hasham",
+    bookName: "Old History",
+    pages: 200,
+    email: "hashama8994@gmail.com",
+    isAlive: true,
   },
   {
     id: 4,
-    fullName: "Abdul Moiz",
-    fatherName: "Zafar Ali",
-    email: "moiza8994@gmail.com",
-    phoneNumber: 1111111111,
-    isMarried: true,
+    autherName: "Hasham",
+    bookName: "Old History",
+    pages: 200,
+    email: "hashama8994@gmail.com",
+    isAlive: true,
   },
 ];
 
-const resolvers = {
-  Query: {
-    contactDetails: () => {
-      return realData;
-    },
-  },
-  Mutation: {
-    addStudent: (e,  {input} ) => {
-      console.log(input);
-      realData.push({
-        id: input.id,
-        fullName: input.fullName,
-        fatherName: input.fatherName,
-        email: input.email,
-        phoneNumber: input.phoneNumber,
-        isMarried: input.isMarried,
-      })
-      return {
-        id: input.id,
-        fullName: input.fullName,
-        fatherName: input.fatherName,
-        email: input.email,
-        phoneNumber: input.phoneNumber,
-        isMarried: input.isMarried,
-      };
-    },
-  },
+const resolvers={
+  Query:{
+    books: () => Books
+  }
 };
 
-const server = new ApolloServer({ typeDefs, resolvers });
 
-server.listen().then(({ url }) => {
-  console.log(`The server is runing port Number ${url}`);
+const server= new ApolloServer({typeDefs,resolvers})
+
+server.listen().then(({url}) =>{
+  console.log(` The Port is runing on port Nimber ${url}`);
 });
