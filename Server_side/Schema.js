@@ -11,8 +11,17 @@ type DataUser{
   id: ID
 }
 
+input messageInput{
+  name: String
+  email: String
+}
+
   type Query{
     user: [DataUser]
+  }
+  
+  type Mutation{
+    addUser(input: messageInput): DataUser
   }`
 
 module.exports=typeDefs;  
