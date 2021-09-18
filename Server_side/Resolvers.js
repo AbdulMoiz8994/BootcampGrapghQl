@@ -1,11 +1,10 @@
-const dammyData=require('./DammyData')
-  
+const dammyData = require("./DammyData");
 
-const resolvers={
-    Query:{
-        studentList: () =>  {
-             return dammyData
-         }
-    }
-}
-module.exports=resolvers
+const resolvers = {
+  Query: {
+    user: () => {
+      return dammyData;
+    },
+  },
+};
+module.exports = resolvers;

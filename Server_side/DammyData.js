@@ -1,31 +1,28 @@
 const dammyData = [
   {
-    name: "Abdul Moiz",
-    fatherName: "zafar Ali",
+    name: "Abdul moiz",
     email: "moiza8994@gmail.com",
-    phoneNumber: 111111111,
-    isPresent: true,
+    phoneNumber: 222222222,
+    id: "121212",
   },
   {
-    name: "Abdul Moiz",
-    fatherName: "zafar Ali",
+    name: "Abdul moiz",
     email: "moiza8994@gmail.com",
-    phoneNumber: 111111111,
-    isPresent: true,
+    phoneNumber: 222222222,
+    id: "121212",
   },
   {
-    name: "Abdul Moiz",
-    fatherName: "zafar Ali",
+    name: "Abdul moiz",
     email: "moiza8994@gmail.com",
-    phoneNumber: 111111111,
-    isPresent: true,
+    phoneNumber: 222222222,
+    id: "121212",
   },
   {
-    name: "Abdul Moiz",
-    fatherName: "zafar Ali",
+    name: "Abdul moiz",
     email: "moiza8994@gmail.com",
-    phoneNumber: 111111111,
-    isPresent: true,
+    phoneNumber: 222222222,
+    id: "121212",
   },
 ];
-module.exports=dammyData
+
+module.exports= dammyData
